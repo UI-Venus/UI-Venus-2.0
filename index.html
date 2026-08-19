@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UI-Venus-2.0 — A General-Purpose Foundation GUI Agent</title>
+  <meta name="description" content="UI-Venus-2.0 is a general-purpose foundation GUI agent for mobile apps, web platforms, and desktop operating systems, built by the Venus Team at Ant Group.">
+  <link rel="icon" type="image/png" href="static/images/favicon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="UI-Venus-2.0 — A General-Purpose Foundation GUI Agent">
+  <meta property="og:description" content="Scaling environments, tasks, and feedback jointly for reliable real-world computer use across mobile, web, and desktop OS.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="static/images/ui-venus-logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:ital,wght@0,400..700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/base.css">
+  <link rel="stylesheet" href="static/css/layout.css">
+  <link rel="stylesheet" href="static/css/components.css">
+  <link rel="stylesheet" href="static/css/abilities.css">
+  <link rel="stylesheet" href="static/css/charts.css">
+</head>
+<body>
+
+  <!-- ======================= Navigation ======================= -->
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top">
+        <img src="static/images/ui-venus-logo.png" alt="UI-Venus logo">
+        <span>UI-Venus<span class="v2">-2.0</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="#abilities">Abilities</a>
+        <a href="#highlights">Highlights</a>
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#safety">Safety</a>
+        <a href="#bibtex">BibTeX</a>
+      </div>
+      <!-- TODO: link the GitHub repository once public -->
+      <span class="nav-gh disabled" title="Repository coming soon">
+        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/></svg>
+        GitHub <span class="tbd">SOON</span>
+      </span>
+    </div>
+  </nav>
+
+  <!-- ======================= Hero ======================= -->
+  <header class="hero" id="top">
+    <!-- decorative sparkle field (signature glyph from the logo) -->
+    <span class="spark" style="width:16px;height:16px;top:16%;left:12%;animation-delay:0s" aria-hidden="true"></span>
+    <span class="spark deep" style="width:10px;height:10px;top:32%;left:6%;animation-delay:1.4s" aria-hidden="true"></span>
+    <span class="spark" style="width:12px;height:12px;top:20%;right:10%;animation-delay:0.8s" aria-hidden="true"></span>
+    <span class="spark deep" style="width:18px;height:18px;top:44%;right:6%;animation-delay:2.2s" aria-hidden="true"></span>
+    <span class="spark" style="width:9px;height:9px;top:62%;left:16%;animation-delay:3s" aria-hidden="true"></span>
+    <span class="spark" style="width:11px;height:11px;top:58%;right:15%;animation-delay:1.9s" aria-hidden="true"></span>
+
+    <div class="wrap hero-inner">
+      <img class="hero-logo" src="static/images/ui-venus-logo.png" alt="UI-Venus-2.0 logo">
+      <span class="eyebrow">Venus Team · Ant Group · Technical Report</span>
+      <h1><span>UI-Venus<span class="v2">-2.0</span></span></h1>
+      <p class="tagline">
+        A <strong>general-purpose foundation GUI agent</strong> for mobile apps, web platforms, and desktop
+        operating systems — scaling <strong>environments, tasks, and feedback</strong> jointly within one
+        closed-loop perception&ndash;reasoning&ndash;action agent.
+      </p>
+      <p class="byline">Venus Team, Ant Group</p>
+
+      <div class="hero-actions">
+        <!-- TODO: replace href with the arXiv link once the report is public -->
+        <span class="btn btn-disabled" title="The technical report will be released soon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+          Paper <span class="tbd">SOON</span>
+        </span>
+        <!-- TODO: link the GitHub repository once public -->
+        <span class="btn btn-disabled" title="Code will be released soon">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/></svg>
+          Code <span class="tbd">SOON</span>
+        </span>
+        <!-- TODO: link the Hugging Face collection once public -->
+        <span class="btn btn-disabled" title="Models will be released soon">
+          <span aria-hidden="true">🤗</span> Model <span class="tbd">SOON</span>
+        </span>
+      </div>
+
+      <div class="hero-chips">
+        <span class="chip">UI-Venus-2.0-9B</span>
+        <span class="chip">UI-Venus-2.0-27B</span>
+        <span class="chip">Mobile · Web · Computer · Grounding · CAPTCHA</span>
+      </div>
+
+      <!-- Headline numbers. TODO: fill in as evaluation completes. -->
+      <div class="stats">
+        <div class="stat">
+          <div class="label">AndroidWorld</div>
+          <div class="value"><span class="tbd">TBD</span></div>
+          <div class="note">mobile use · v1.5: 77.6</div>
+        </div>
+        <div class="stat">
+          <div class="label">OSWorld-Verified</div>
+          <div class="value"><span class="tbd">TBD</span></div>
+          <div class="note">computer use</div>
+        </div>
+        <div class="stat">
+          <div class="label">WebVoyager</div>
+          <div class="value"><span class="tbd">TBD</span></div>
+          <div class="note">web navigation · v1.5: 76.0</div>
+        </div>
+        <div class="stat">
+          <div class="label">ScreenSpot-Pro</div>
+          <div class="value"><span class="tbd">TBD</span></div>
+          <div class="note">grounding · v1.5: 69.6</div>
+        </div>
+        <div class="stat highlight">
+          <div class="label">OSBlind ASR ↓</div>
+          <div class="value"><span class="count-up" data-target="12.3">12.3</span></div>
+          <div class="note">safety · lower is better</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ======================= Overview ======================= -->
+    <section class="section" id="overview">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Overview</span>
+          <h2>From navigation agent to reliable computer use</h2>
+          <p class="lede">
+            Building on UI-Venus and UI-Venus-1.5, UI-Venus-2.0 takes a further step toward general-purpose
+            computer use by systematically scaling the environments, tasks, and feedback available to the agent.
+            The agent observes the current interface, reasons about the task state, executes an action, and
+            incorporates environmental feedback into its next decision — a unified closed loop that runs across
+            mobile applications, dynamic websites, and full desktop operating systems.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= What it can do ======================= -->
+    <section class="section" id="abilities">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">What it can do</span>
+          <h2>Built for real work across GUI interfaces</h2>
+          <p class="lede">
+            Six capabilities, one agent. Animated schematics sketch what each capability does — concrete
+            end-to-end cases will follow in a dedicated demos section.
+          </p>
+        </div>
+
+        <div data-reveal>
+          <div class="cap-strip" role="tablist" aria-label="Capabilities">
+            <button class="cap-cell" role="tab" id="capbtn-mobile" aria-controls="cap-mobile" aria-selected="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M10 18.5h4"/></svg>
+              <span class="cap-idx">01</span>
+              <span class="cap-name">Mobile Use</span>
+            </button>
+            <button class="cap-cell" role="tab" id="capbtn-browser" aria-controls="cap-browser" aria-selected="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.9 5.7 3.9 9S14.5 18.4 12 21c-2.5-2.6-3.9-5.7-3.9-9S9.5 5.6 12 3z"/></svg>
+              <span class="cap-idx">02</span>
+              <span class="cap-name">Browser Use</span>
+            </button>
+            <button class="cap-cell" role="tab" id="capbtn-computer" aria-controls="cap-computer" aria-selected="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              <span class="cap-idx">03</span>
+              <span class="cap-name">Computer Use</span>
+            </button>
+            <button class="cap-cell" role="tab" id="capbtn-grounding" aria-controls="cap-grounding" aria-selected="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+              <span class="cap-idx">04</span>
+              <span class="cap-name">GUI Grounding</span>
+            </button>
+            <button class="cap-cell" role="tab" id="capbtn-captcha" aria-controls="cap-captcha" aria-selected="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 7a2 2 0 0 1 2-2h4v2.5a1.5 1.5 0 0 0 3 0V5h4a2 2 0 0 1 2 2v4h-2.5a1.5 1.5 0 0 0 0 3H19v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7z"/></svg>
+              <span class="cap-idx">05</span>
+              <span class="cap-name">CAPTCHA</span>
+            </button>
+            <button class="cap-cell" role="tab" id="capbtn-safety" aria-controls="cap-safety" aria-selected="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 2l8 3.5v5.7c0 5-3.4 9.3-8 10.8-4.6-1.5-8-5.8-8-10.8V5.5L12 2z"/><path d="M9 12l2 2 4-4.5"/></svg>
+              <span class="cap-idx">06</span>
+              <span class="cap-name">Safety</span>
+            </button>
+          </div>
+
+          <!-- 01 · Mobile Use -->
+          <div class="cap-panel" id="cap-mobile" role="tabpanel" aria-labelledby="capbtn-mobile">
+            <div class="cap-demo">
+              <div class="cap-main">
+                <span class="cap-eyebrow">Instruction</span>
+                <h4>Rename &amp; share a cloud file</h4>
+                <p class="cap-task">&ldquo;打开夸克 App，在网盘中将最新文件重命名为&ldquo;测试文档_1213&rdquo;，设置加密分享并生成链接，最后复制。&rdquo;</p>
+                <div class="steps">
+                  <span class="step"><span class="step-no">01</span>Open cloud drive</span>
+                  <span class="step"><span class="step-no">02</span>Rename latest file</span>
+                  <span class="step"><span class="step-no">03</span>Encrypted share</span>
+                  <span class="step"><span class="step-no">04</span>Copy link</span>
+                </div>
+                <div class="cap-visual">
+                  <div class="mock-phone">
+                    <div class="notch"></div>
+                    <div class="m-bar">网盘 · 最近</div>
+                    <div class="m-file"><span class="m-ico"></span><span class="m-name">季度报告.pdf</span></div>
+                    <div class="m-file hl anim-tap"><span class="m-ico"></span><span class="m-name">测试文档.docx</span><span class="m-meta">刚刚</span></div>
+                    <div class="m-file"><span class="m-ico"></span><span class="m-name">照片备份.zip</span></div>
+                    <div class="m-file"><span class="m-ico"></span><span class="m-name">会议纪要.md</span></div>
+                  </div>
+                  <span class="mock-arrow" aria-hidden="true">→</span>
+                  <div class="mock-phone">
+                    <div class="notch"></div>
+                    <div class="m-bar">重命名</div>
+                    <div class="m-input"><span class="anim-type">测试文档_1213</span></div>
+                    <div class="m-toggle">加密分享<span class="m-switch anim-toggle"></span></div>
+                    <div class="m-btn anim-btn">生成链接</div>
+                  </div>
+                  <span class="mock-arrow" aria-hidden="true">→</span>
+                  <div class="mock-phone dim anim-wake">
+                    <div class="notch"></div>
+                    <div class="m-bar">分享成功</div>
+                    <div class="m-link">pan.quark.cn/s/8f3k…</div>
+                    <div class="m-btn ok">已复制 ✓</div>
+                  </div>
+                </div>
+              </div>
+              <aside class="cap-side">
+                <span class="cap-eyebrow">Capability 01</span>
+                <h3>Mobile Use</h3>
+                <p>
+                  Real-device automation across 200+ Chinese and English apps. The agent navigates changing app
+                  states, accounts, content, and network conditions to search, compare, schedule, purchase, and
+                  manage files — end-to-end from screenshots.
+                </p>
+                <span class="metric-line">AndroidWorld · VenusBench-CN · MobileWorld</span>
+                <div class="pager">
+                  <button type="button" data-dir="-1" aria-label="Previous capability">←</button>
+                  <span>01 / 06</span>
+                  <button type="button" data-dir="1" aria-label="Next capability">→</button>
+                </div>
+              </aside>
+            </div>
+          </div>
+
+          <!-- 02 · Browser Use -->
+          <div class="cap-panel" id="cap-browser" role="tabpanel" aria-labelledby="capbtn-browser" hidden>
+            <div class="cap-demo">
+              <div class="cap-main">
+                <span class="cap-eyebrow">Instruction</span>
+                <h4>Constrained product hunt</h4>
+                <p class="cap-task">&ldquo;Find best-selling dark blue denim jeans in boys' size 10 Husky that cost between $24 and $52 on Amazon.&rdquo;</p>
+                <div class="steps">
+                  <span class="step"><span class="step-no">01</span>Search &amp; filter</span>
+                  <span class="step"><span class="step-no">02</span>Apply size / color</span>
+                  <span class="step"><span class="step-no">03</span>Sort by best-selling</span>
+                  <span class="step"><span class="step-no">04</span>Verify price range</span>
+                </div>
+                <div class="cap-visual">
+                  <div class="mock-win">
+                    <div class="mock-winbar"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-url">amazon.com/s?k=boys+jeans+size+10+husky</span></div>
+                    <div class="mock-body">
+                      <div class="m-chips">
+                        <span class="m-chip anim-chip">Size 10 Husky</span>
+                        <span class="m-chip anim-chip d2">Dark blue</span>
+                        <span class="m-chip anim-chip d3">$24 – $52</span>
+                        <span class="m-sort">Sort: Best selling</span>
+                      </div>
+                      <div class="m-cards">
+                        <div class="m-card"><div class="m-img"></div><div class="m-pname">Levi's 511 Slim</div><div class="m-price">$45.00</div></div>
+                        <div class="m-card pick anim-pick"><span class="m-badge">Best Seller</span><div class="m-img deep"></div><div class="m-pname">Wrangler Authentics</div><div class="m-price">$29.99 · ★ 4.7</div></div>
+                        <div class="m-card off"><div class="m-img"></div><div class="m-pname">Basics Straight</div><div class="m-price strike">$19.90</div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <aside class="cap-side">
+                <span class="cap-eyebrow">Capability 02</span>
+                <h3>Browser Use</h3>
+                <p>
+                  Live-web navigation over 50k+ websites — search, filters, forms, carts, and long-horizon
+                  workflows that span multiple sites, from refreshed WebVoyager tasks to rubric-scored
+                  Odysseys journeys.
+                </p>
+                <span class="metric-line">WebVoyager · Online-Mind2Web · Odysseys</span>
+                <div class="pager">
+                  <button type="button" data-dir="-1" aria-label="Previous capability">←</button>
+                  <span>02 / 06</span>
+                  <button type="button" data-dir="1" aria-label="Next capability">→</button>
+                </div>
+              </aside>
+            </div>
+          </div>
+
+          <!-- 03 · Computer Use -->
+          <div class="cap-panel" id="cap-computer" role="tabpanel" aria-labelledby="capbtn-computer" hidden>
+            <div class="cap-demo">
+              <div class="cap-main">
+                <span class="cap-eyebrow">Instruction</span>
+                <h4>Pixel-art asset from a tutorial</h4>
+                <p class="cap-task">&ldquo;Using one embedded pixel-art sample from the supplied tutorial as the source, create a clean sprite in GIMP and export it.&rdquo;</p>
+                <div class="steps">
+                  <span class="step"><span class="step-no">01</span>Read tutorial</span>
+                  <span class="step"><span class="step-no">02</span>Extract sample</span>
+                  <span class="step"><span class="step-no">03</span>Edit in GIMP</span>
+                  <span class="step"><span class="step-no">04</span>Export result</span>
+                </div>
+                <div class="cap-visual">
+                  <div class="mock-win">
+                    <div class="mock-winbar"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-url">GIMP — sprite.xcf</span></div>
+                    <div class="mock-body">
+                      <div class="m-menu">File&nbsp;&nbsp;Edit&nbsp;&nbsp;Select&nbsp;&nbsp;Layer&nbsp;&nbsp;Filters</div>
+                      <div class="mock-row">
+                        <div class="m-tools"><span></span><span></span><span></span><span></span></div>
+                        <div class="m-canvas"></div>
+                        <div class="m-panel">
+                          <div class="m-panel-t">Layers</div>
+                          <div class="m-layer hl anim-blink">sprite</div>
+                          <div class="m-layer">tutorial ref</div>
+                          <div class="m-layer">background</div>
+                        </div>
+                      </div>
+                      <div class="m-status anim-status">sprite.png exported ✓</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <aside class="cap-side">
+                <span class="cap-eyebrow">Capability 03</span>
+                <h3>Computer Use</h3>
+                <p>
+                  Desktop OS control over 50+ professional applications — office suites, IDEs, and creative
+                  tools. OS-level operations and multi-app workflows, with clarification and interruption
+                  handling in DeskCraft-style human&ndash;agent collaboration.
+                </p>
+                <span class="metric-line">OSWorld-Verified · OSWorld-V2 · DeskCraft</span>
+                <div class="pager">
+                  <button type="button" data-dir="-1" aria-label="Previous capability">←</button>
+                  <span>03 / 06</span>
+                  <button type="button" data-dir="1" aria-label="Next capability">→</button>
+                </div>
+              </aside>
+            </div>
+          </div>
+
+          <!-- 04 · GUI Grounding -->
+          <div class="cap-panel" id="cap-grounding" role="tabpanel" aria-labelledby="capbtn-grounding" hidden>
+            <div class="cap-demo">
+              <div class="cap-main">
+                <span class="cap-eyebrow">Instruction</span>
+                <h4>Find the exact pixel</h4>
+                <p class="cap-task">&ldquo;Toggle visibility of the &lsquo;Background copy&rsquo; layer in the Layers panel.&rdquo;</p>
+                <div class="steps">
+                  <span class="step"><span class="step-no">01</span>Parse instruction</span>
+                  <span class="step"><span class="step-no">02</span>Ground element</span>
+                  <span class="step"><span class="step-no">03</span>click(412, 286)</span>
+                </div>
+                <div class="cap-visual">
+                  <div class="mock-win">
+                    <div class="mock-winbar"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-url">photo-editor — layers panel</span></div>
+                    <div class="mock-body">
+                      <div class="mock-row">
+                        <div class="m-canvas2"><div class="m-shape a"></div><div class="m-shape b"></div></div>
+                        <div class="m-panel wide">
+                          <div class="m-panel-t">Layers</div>
+                          <div class="m-layer"><span class="m-eye on"></span>Layer 1</div>
+                          <div class="m-layer target"><span class="m-eye tgt"></span>Background copy</div>
+                          <div class="m-layer"><span class="m-eye on"></span>Background</div>
+                        </div>
+                      </div>
+                      <span class="target-ring" style="top:60px;right:132px"></span>
+                      <span class="coord-chip" style="top:90px;right:40px">click(412, 286)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <aside class="cap-side">
+                <span class="cap-eyebrow">Capability 04</span>
+                <h3>GUI Grounding</h3>
+                <p>
+                  Pixel-precise element localization in dense, high-resolution professional UIs — text, icons,
+                  and widgets. Handles reasoning-heavy, goal-oriented instructions and correctly refuses
+                  infeasible ones.
+                </p>
+                <span class="metric-line">ScreenSpot-Pro · VenusBench-GD · UI-Vision</span>
+                <div class="pager">
+                  <button type="button" data-dir="-1" aria-label="Previous capability">←</button>
+                  <span>04 / 06</span>
+                  <button type="button" data-dir="1" aria-label="Next capability">→</button>
+                </div>
+              </aside>
+            </div>
+          </div>
+
+          <!-- 05 · CAPTCHA -->
+          <div class="cap-panel" id="cap-captcha" role="tabpanel" aria-labelledby="capbtn-captcha" hidden>
+            <div class="cap-demo">
+              <div class="cap-main">
+                <span class="cap-eyebrow">Instruction</span>
+                <h4>Slide, rotate, click — verified</h4>
+                <p class="cap-task">&ldquo;Drag the slider so the puzzle piece fits the gap, then confirm.&rdquo;</p>
+                <div class="steps">
+                  <span class="step"><span class="step-no">01</span>Perceive puzzle</span>
+                  <span class="step"><span class="step-no">02</span>Compute offset</span>
+                  <span class="step"><span class="step-no">03</span>Multi-action drag</span>
+                </div>
+                <div class="cap-visual">
+                  <div class="mock-captcha">
+                    <div class="m-cap-t">安全验证</div>
+                    <div class="captcha-img">
+                      <span class="m-hill a"></span><span class="m-hill b"></span>
+                      <span class="puzzle-piece"></span>
+                      <span class="puzzle-hole"></span>
+                    </div>
+                    <div class="slider-track">
+                      <span class="slider-hint">拖动滑块完成拼图</span>
+                      <span class="slider-handle">›</span>
+                      <span class="slider-trail"></span>
+                    </div>
+                    <div class="m-cap-ok anim-capok">验证通过 ✓</div>
+                  </div>
+                </div>
+              </div>
+              <aside class="cap-side">
+                <span class="cap-eyebrow">Capability 05</span>
+                <h3>CAPTCHA Solving</h3>
+                <p>
+                  Solves eight real-world CAPTCHA families — slider puzzles, image rotation, text and icon
+                  click, OCR entry, and visual reasoning — emitting the full multi-action sequence in a
+                  single turn.
+                </p>
+                <span class="metric-line">VenusBench-CAPTCHA · Spatial-CAPTCHA · MCA-Bench</span>
+                <div class="pager">
+                  <button type="button" data-dir="-1" aria-label="Previous capability">←</button>
+                  <span>05 / 06</span>
+                  <button type="button" data-dir="1" aria-label="Next capability">→</button>
+                </div>
+              </aside>
+            </div>
+          </div>
+
+          <!-- 06 · Safety -->
+          <div class="cap-panel" id="cap-safety" role="tabpanel" aria-labelledby="capbtn-safety" hidden>
+            <div class="cap-demo">
+              <div class="cap-main">
+                <span class="cap-eyebrow">Instruction</span>
+                <h4>Knows when to ask first</h4>
+                <p class="cap-task">&ldquo;Free up disk space — just delete whatever we don't need.&rdquo;</p>
+                <div class="steps">
+                  <span class="step"><span class="step-no">01</span>Detect consequential action</span>
+                  <span class="step"><span class="step-no">02</span>Assess blind spots</span>
+                  <span class="step"><span class="step-no">03</span>Ask before acting</span>
+                </div>
+                <div class="cap-visual">
+                  <div>
+                    <div class="mock-dialog">
+                      <div class="dlg-head">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2l8 3.5v5.7c0 5-3.4 9.3-8 10.8-4.6-1.5-8-5.8-8-10.8V5.5L12 2z"/><path d="M12 8v5M12 16.5v.5"/></svg>
+                        <span class="dlg-title">Irreversible deletion detected</span>
+                      </div>
+                      <div class="m-txt">About to delete <b>128 files · 4.2 GB</b></div>
+                      <div class="m-txt dim2">Photos · Documents · Downloads</div>
+                      <div class="dlg-btns">
+                        <span class="btn-mini go">Ask the user</span>
+                        <span class="btn-mini stop">Delete silently</span>
+                      </div>
+                      <span class="action-chip">CallUser("confirm deletion scope?")</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <aside class="cap-side">
+                <span class="cap-eyebrow">Capability 06</span>
+                <h3>Safety</h3>
+                <p>
+                  Reliable control over consequential actions: recognizes risky, benign-looking requests,
+                  asks the user before irreversible steps, and resists safety blind spots — 12.3% attack
+                  success rate on OSBlind versus 90%+ for prior GUI agents.
+                </p>
+                <span class="metric-line">OSBlind ASR ↓ 12.3</span>
+                <div class="pager">
+                  <button type="button" data-dir="-1" aria-label="Previous capability">←</button>
+                  <span>06 / 06</span>
+                  <button type="button" data-dir="1" aria-label="Next capability">→</button>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= Highlights ======================= -->
+    <section class="section" id="highlights">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Highlights</span>
+          <h2>What&rsquo;s new in 2.0</h2>
+          <p class="lede">
+            Four tightly coupled advances make environment coverage, task quality, outcome verification,
+            and self-assessment work together as one system.
+          </p>
+        </div>
+
+        <div class="cards">
+          <div class="card" data-reveal>
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M10 18.5h4"/></svg>
+            </div>
+            <h3>Scaled multilingual mobile environments</h3>
+            <p>
+              A substantially expanded executable mobile pool covering Chinese and English app ecosystems,
+              paired with a <strong>deep-research-driven query-generation</strong> strategy that grounds task
+              queries in real application functionality — improving the accuracy, validity, and executability
+              of generated instructions.
+            </p>
+          </div>
+          <div class="card" data-reveal>
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <h3>Computer use, built from the ground up</h3>
+            <p>
+              Dedicated desktop operating-system capabilities constructed from scratch through computer-use
+              data collection and task-specific training, extending the UI-Venus family to
+              <strong>mobile, web, and OS interaction in one unified end-to-end agent</strong>.
+            </p>
+          </div>
+          <div class="card" data-reveal>
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg>
+            </div>
+            <h3>Keypoint-grounded verification</h3>
+            <p>
+              Task completion is judged on <strong>task-relevant visual keypoints</strong> rather than a coarse
+              holistic look at the final screen, with <strong>multi-model voting</strong> aggregating heterogeneous
+              judges — reducing single-judge bias and making the reward signal robust to reward hacking.
+            </p>
+          </div>
+          <div class="card" data-reveal>
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>
+            </div>
+            <h3>Verification-augmented reflection</h3>
+            <p>
+              Verified feedback is distilled back into training as <strong>reflection supervision</strong>, so the
+              agent can distinguish partial progress from true completion, avoid premature termination caused by
+              observation misinterpretation, and recover during long-horizon interaction.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= Method ======================= -->
+    <section class="section" id="method">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Method</span>
+          <h2>One unified training pipeline, five task families</h2>
+          <p class="lede">
+            UI-Venus-2.0 is initialized from <strong>Qwen3.5-9B</strong> and <strong>Qwen3.6-27B</strong> and trained
+            on a deliberately complementary mixture of <strong>Grounding, CAPTCHA, Mobile, Web, and Computer</strong>
+            tasks: grounding provides fine-grained spatial perception, CAPTCHA offers controlled and verifiable
+            interaction supervision, and the navigation families supply realistic multi-step experience.
+          </p>
+        </div>
+
+        <div class="stages" data-reveal>
+          <div class="stage">
+            <span class="stage-no">Stage I</span>
+            <h3>Multimodal Mid-Training</h3>
+            <p>
+              Large-scale trajectory-based mid-training over simulated mobile, web, and OS environments, with
+              human&ndash;discriminator collaborative verification filtering invalid or ambiguous interactions,
+              plus programmatically synthesized grounding and CAPTCHA supervision.
+            </p>
+          </div>
+          <div class="stage">
+            <span class="stage-no">Stage II</span>
+            <h3>Offline RL</h3>
+            <p>
+              Step-level RL trajectories for Mobile, OS, and Web optimize state-aware action selection and
+              execution reliability, while verified CAPTCHA and grounding instances embedded in realistic
+              interfaces teach precise localization under visual clutter.
+            </p>
+          </div>
+          <div class="stage">
+            <span class="stage-no">Stage III</span>
+            <h3>Multi-teacher On-policy Distillation</h3>
+            <p>
+              Domain-specialized teachers are consolidated into a single unified policy that preserves the broad
+              multimodal reasoning of the base model while composing spatial grounding, verified interaction,
+              and long-horizon navigation.
+            </p>
+          </div>
+        </div>
+
+        <figure class="figure" data-reveal>
+          <img src="static/images/pipeline.png" alt="The three-stage training pipeline of UI-Venus-2.0: mid-training, offline RL per domain, then multi-teacher on-policy distillation.">
+          <figcaption>
+            <strong>The three-stage pipeline of UI-Venus-2.0.</strong> Trajectory-based mid-training injects GUI
+            interaction knowledge; each domain (Grounding, CAPTCHA, Mobile, Web, Computer) is then optimized
+            independently with step-level offline RL; finally, the specialized models are consolidated via
+            multi-teacher on-policy distillation.
+          </figcaption>
+        </figure>
+
+        <figure class="figure" data-reveal>
+          <img src="static/images/system-overview.png" alt="System overview of UI-Venus-2.0: task generation pipeline, multi-domain task pool, and trajectory collection across mobile, browser, and computer environments.">
+          <figcaption>
+            <strong>System overview.</strong> A deep-research-driven task-generation pipeline builds a multi-domain
+            task pool from application capabilities; interaction trajectories are then collected at scale across
+            mobile (ADB, 200+ apps), browser (Playwright, 50k+ websites), and computer (PyAutoGUI / VM, 50+ desktop
+            applications) environments.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ======================= Results ======================= -->
+    <section class="section" id="results">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Results</span>
+          <h2>Benchmark results</h2>
+          <p class="lede">
+            Key results per domain, with the strongest published baselines for context.
+            <strong>Evaluation is in progress</strong> — hatched bars marked <span class="tbd">TBD</span> are
+            UI-Venus-2.0 slots that will be filled as numbers are finalized. Full comparison tables are available
+            under each chart group.
+          </p>
+        </div>
+
+        <div data-reveal>
+          <div class="chart-legend" aria-hidden="true">
+            <span><i class="sw sw-ours"></i>UI-Venus-2.0</span>
+            <span><i class="sw sw-ghost"></i>TBD · evaluation in progress</span>
+            <span><i class="sw sw-family"></i>UI-Venus previous gen</span>
+            <span><i class="sw sw-base"></i>Other models</span>
+          </div>
+
+          <div class="tabs" role="tablist" aria-label="Benchmark domains">
+            <button class="tab-btn" role="tab" id="tab-mobile" aria-controls="panel-mobile" aria-selected="true">Mobile Use</button>
+            <button class="tab-btn" role="tab" id="tab-computer" aria-controls="panel-computer" aria-selected="false">Computer Use</button>
+            <button class="tab-btn" role="tab" id="tab-web" aria-controls="panel-web" aria-selected="false">Web Navigation</button>
+            <button class="tab-btn" role="tab" id="tab-grounding" aria-controls="panel-grounding" aria-selected="false">GUI Grounding</button>
+            <button class="tab-btn" role="tab" id="tab-captcha" aria-controls="panel-captcha" aria-selected="false">CAPTCHA</button>
+          </div>
+
+          <!-- ---------- Mobile use ---------- -->
+          <div class="panel" id="panel-mobile" role="tabpanel" aria-labelledby="tab-mobile">
+            <p class="panel-note">
+              Online, interactive mobile-agent benchmarks, including our in-house VenusBench-CN with tasks drawn
+              from 100+ real-world Chinese Android applications.
+            </p>
+            <div class="chart-grid" data-charts="mobile"></div>
+            <details class="full-table" data-src="partials/tables/mobile.html">
+              <summary>Full comparison table — Mobile Use</summary>
+            </details>
+          </div>
+
+          <!-- ---------- Computer use ---------- -->
+          <div class="panel" id="panel-computer" role="tabpanel" aria-labelledby="tab-computer" hidden>
+            <p class="panel-note">
+              Open-ended tasks in real computer environments: desktop and web applications, OS-level operations,
+              and long-horizon professional workflows.
+            </p>
+            <div class="chart-grid" data-charts="computer"></div>
+            <details class="full-table" data-src="partials/tables/computer.html">
+              <summary>Full comparison table — Computer Use</summary>
+            </details>
+          </div>
+
+          <!-- ---------- Web navigation ---------- -->
+          <div class="panel" id="panel-web" role="tabpanel" aria-labelledby="tab-web" hidden>
+            <p class="panel-note">
+              End-to-end navigation on the live web: WebVoyager (filtered &amp; refreshed 595-task split),
+              Online-Mind2Web, and the long-horizon cross-site Odysseys benchmark with rubric-based scoring.
+            </p>
+            <div class="chart-grid" data-charts="web"></div>
+            <details class="full-table" data-src="partials/tables/web.html">
+              <summary>Full comparison table — Web Navigation</summary>
+            </details>
+          </div>
+
+          <!-- ---------- GUI grounding ---------- -->
+          <div class="panel" id="panel-grounding" role="tabpanel" aria-labelledby="tab-grounding" hidden>
+            <p class="panel-note">
+              Element localization across high-resolution professional software, mobile / web / desktop interfaces,
+              and reasoning-heavy or refusal-aware instructions. UI-Venus-1.5 marks our previous generation.
+            </p>
+            <div class="chart-grid" data-charts="grounding"></div>
+            <details class="full-table" data-src="partials/tables/grounding.html">
+              <summary>Full comparison table — GUI Grounding</summary>
+            </details>
+          </div>
+
+          <!-- ---------- CAPTCHA ---------- -->
+          <div class="panel" id="panel-captcha" role="tabpanel" aria-labelledby="tab-captcha" hidden>
+            <p class="panel-note">
+              Three complementary CAPTCHA benchmarks, including our VenusBench-CAPTCHA — 219 images across eight
+              real-world CAPTCHA categories (OCR text entry, text / icon click, image rotation, drag-to-end,
+              slider puzzle, visual reasoning, one-click verification).
+            </p>
+            <div class="chart-grid" data-charts="captcha"></div>
+            <details class="full-table" data-src="partials/tables/captcha.html">
+              <summary>Full comparison table — CAPTCHA Solving</summary>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= Safety ======================= -->
+    <section class="section" id="safety">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Safety</span>
+          <h2>Capable, and careful about it</h2>
+          <p class="lede">
+            OSBlind evaluates an agent&rsquo;s susceptibility to safety blind spots: benign-looking instructions in
+            realistic desktop environments that can lead to unintended harmful outcomes, measured by Attack
+            Success Rate (ASR, lower is better).
+          </p>
+        </div>
+
+        <div class="safety-grid" data-reveal>
+          <div class="chart-grid" data-charts="safety"></div>
+          <div class="callout">
+            <span class="cap">Attack success rate</span>
+            <div class="big"><span class="count-up" data-target="12.3">12.3</span><small>%</small></div>
+            <p>
+              Safety-aware training brings ASR down from 90%+ (typical of prior GUI agents) to 12.3% — increased
+              operational capability accompanied by more reliable control over potentially consequential actions.
+            </p>
+          </div>
+        </div>
+        <!-- TODO: confirm final checkpoint naming — draft table lists these as 8B / 30B-A3B -->
+        <p class="section-footnote" data-reveal>
+          ASR = frequency of executing harmful outcomes under benign instructions. Model-size labels for our
+          checkpoints to be confirmed in the final report.
+        </p>
+      </div>
+    </section>
+
+    <!-- ======================= BibTeX ======================= -->
+    <section class="section" id="bibtex">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Citation</span>
+          <h2>BibTeX</h2>
+          <p class="lede">If you find UI-Venus-2.0 useful, please cite the technical report. <span class="tbd">TODO · arXiv ID</span></p>
+        </div>
+        <div class="bibtex-card" data-reveal>
+          <button class="copy-btn" id="copy-bibtex" type="button">Copy</button>
+<!-- TODO: update the arXiv identifier and year once the report is public -->
+<pre id="bibtex-text">@article{uivenus2026,
+  title   = {UI-Venus-2.0 Technical Report},
+  author  = {{Venus Team, Ant Group}},
+  journal = {arXiv preprint arXiv:XXXX.XXXXX},
+  year    = {2026}
+}</pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================= Footer ======================= -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="#top">
+            <img src="static/images/ui-venus-logo.png" alt="UI-Venus logo">
+            <span>UI-Venus<span class="v2">-2.0</span></span>
+          </a>
+          <p class="foot-note">
+            A general-purpose foundation GUI agent by the Venus Team at Ant Group — advancing from action-centric
+            navigation toward broader, verifiable, and self-reflective computer use.
+          </p>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <ul>
+            <!-- TODO: link GitHub / Hugging Face once public -->
+            <li>GitHub repository <span class="tbd">SOON</span></li>
+            <li>Hugging Face models <span class="tbd">SOON</span></li>
+            <li>Technical report <span class="tbd">SOON</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4>UI-Venus family</h4>
+          <ul>
+            <li><a href="https://arxiv.org/abs/2508.10833" target="_blank" rel="noopener">UI-Venus (1.0) report</a></li>
+            <li>UI-Venus-1.5 report <span class="tbd">LINK</span></li>
+            <li>UI-Venus-2.0 <span class="tbd">SOON</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> Venus Team · Ant Group</span>
+        <span>✦ built with the UI-Venus palette</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="chart-tooltip" id="chart-tooltip" role="status" aria-hidden="true"></div>
+
+  <script src="static/js/results-data.js"></script>
+  <script src="static/js/charts.js"></script>
+  <script src="static/js/abilities.js"></script>
+  <script src="static/js/main.js"></script>
+</body>
+</html>

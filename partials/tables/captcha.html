@@ -1,0 +1,35 @@
+<div class="table-card">
+                <div class="table-scroll">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Model</th>
+                        <th>VenusBench-CAPTCHA<br>Accuracy</th>
+                        <th>Spatial-CAPTCHA-Bench<br>Pass@1</th>
+                        <th>MCA-Bench<br>Macro Pass@2</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td class="group" colspan="4">General VLMs</td></tr>
+                      <tr><td>GPT-4o</td><td>–</td><td>26.1</td><td>49.3</td></tr>
+                      <tr><td>Gemini-2.5-Pro</td><td>–</td><td>29.0</td><td>53.0</td></tr>
+                      <tr><td>o4-mini</td><td>–</td><td>31.0</td><td>–</td></tr>
+                      <tr><td>Claude-Sonnet-4</td><td>–</td><td>21.4</td><td>–</td></tr>
+                      <tr><td>Seed1.5-VL</td><td>–</td><td>–</td><td>51.1</td></tr>
+                      <tr><td>GPT-5.5</td><td>39.7</td><td>–</td><td>–</td></tr>
+                      <tr><td>Claude-Opus-4.8</td><td>45.7</td><td>–</td><td>–</td></tr>
+                      <tr><td>Doubao-Seed-2.1-Pro</td><td>45.2</td><td>–</td><td>–</td></tr>
+                      <tr><td>Qwen3.8-Max</td><td>54.3</td><td>–</td><td>–</td></tr>
+                      <tr><td>Kimi-K3</td><td>56.6</td><td>–</td><td>–</td></tr>
+                      <tr><td class="group" colspan="4">Ours</td></tr>
+                      <!-- TODO: fill UI-Venus-2.0 CAPTCHA results -->
+                      <tr class="ours"><td>UI-Venus-2.0-9B</td><td><span class="tbd">TBD</span></td><td><span class="tbd">TBD</span></td><td><span class="tbd">TBD</span></td></tr>
+                      <tr class="ours"><td>UI-Venus-2.0-27B</td><td><span class="tbd">TBD</span></td><td><span class="tbd">TBD</span></td><td><span class="tbd">TBD</span></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="table-foot">
+                  All scores are percentages, higher is better. Spatial-CAPTCHA-Bench: zero-shot aggregate Pass@1;
+                  MCA-Bench: macro-average of 20 task-level Pass@2 scores.
+                </div>
+              </div>

@@ -1,0 +1,131 @@
+/* ==========================================================================
+   UI-Venus-2.0 project page — base.css
+   Design tokens, reset, shared primitives (eyebrow-free zone: TBD chips,
+   hidden helper, scroll-reveal, reduced-motion policy).
+   ========================================================================== */
+
+/* ==========================================================================
+   UI-Venus-2.0 project page
+   Palette derived from the UI-Venus logo: bright frame blue, deep star blue,
+   icy cyan interior. Light, modern, blue-family design.
+   ========================================================================== */
+
+:root {
+  --paper: #f6fafe;
+  --ice: #e7f4fd;
+  --card: #ffffff;
+  --ink: #0c1e3a;
+  --muted: #52678a;
+  --line: #d7e6f5;
+  --venus: #1d6fe0;
+  --venus-bright: #3b8bf4;
+  --venus-deep: #14509f;
+  --sky: #7ec4f8;
+  --tbd-ink: #6b7fa0;
+  --tbd-bg: #f2f7fc;
+  --tbd-line: #a9bfd8;
+  --code-bg: #0e2247;
+  --code-ink: #dce9fa;
+
+  --font-display: "Bricolage Grotesque", "Instrument Sans", system-ui, sans-serif;
+  --font-body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --radius: 18px;
+  --shadow-soft: 0 10px 30px -18px rgba(20, 80, 159, 0.35);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--venus); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+:focus-visible {
+  outline: 2px solid var(--venus-bright);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.wrap {
+  max-width: 1080px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+
+[hidden] { display: none !important; }
+
+/* TBD chip — the page's placeholder language for pending results. */
+.tbd {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--tbd-ink);
+  background: var(--tbd-bg);
+  border: 1px dashed var(--tbd-line);
+  border-radius: 6px;
+  padding: 2px 9px;
+  vertical-align: middle;
+}
+.stat .value .tbd { font-size: 14px; padding: 6px 12px; }
+
+/* --------------------------------------------------------------------------
+   Sections
+   -------------------------------------------------------------------------- */
+
+.section { padding: 76px 0 8px; }
+.section:last-of-type { padding-bottom: 72px; }
+
+.section-head { max-width: 780px; margin-bottom: 36px; }
+.section-head .eyebrow { font-size: 11.5px; }
+.section-head .eyebrow::after { content: none; }
+
+.section-head h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.8rem, 3.4vw, 2.35rem);
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+  margin: 10px 0 0;
+}
+.section-head .lede {
+  color: var(--muted);
+  font-size: 16.5px;
+  margin: 14px 0 0;
+}
+
+/* --------------------------------------------------------------------------
+   Scroll reveal + motion preferences
+   -------------------------------------------------------------------------- */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+[data-reveal].revealed { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .spark { animation: none; }
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
+  .btn, .card { transition: none; }
+  .cap-visual *, .cap-visual *::before, .cap-visual *::after,
+  .cap-cell[aria-selected="true"]::after { animation: none !important; }
+}

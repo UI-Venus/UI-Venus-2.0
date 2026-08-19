@@ -1,0 +1,756 @@
+/* ==========================================================================
+   UI-Venus-2.0 project page — abilities.css
+   "What it can do" showcase: capability strip, panels, mock UI content,
+   and the looping schematic animations.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Capability showcase — "What it can do"
+   -------------------------------------------------------------------------- */
+
+.cap-strip {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--card);
+  margin-bottom: 20px;
+}
+@media (max-width: 940px) { .cap-strip { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 560px) { .cap-strip { grid-template-columns: repeat(2, 1fr); } }
+
+.cap-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 16px 14px 13px;
+  background: var(--card);
+  border: 0;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-body);
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.cap-cell:hover { background: #f2f8fe; }
+.cap-cell { position: relative; }
+.cap-cell[aria-selected="true"] { background: var(--ice); }
+.cap-cell[aria-selected="true"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 100%;
+  background: var(--venus);
+}
+/* While auto-rotating, the underline doubles as a progress bar. */
+.cap-strip.auto .cap-cell[aria-selected="true"]::after {
+  width: 0;
+  animation: capProgress 8s linear forwards;
+}
+@keyframes capProgress { from { width: 0; } to { width: 100%; } }
+.cap-cell svg { width: 24px; height: 24px; color: var(--muted); }
+.cap-cell[aria-selected="true"] svg { color: var(--venus); }
+.cap-idx {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+.cap-cell[aria-selected="true"] .cap-idx { color: var(--venus); }
+.cap-name { font-size: 13.5px; font-weight: 600; color: var(--ink); line-height: 1.2; }
+
+/* Panel: instruction + visual on the left, capability blurb on the right */
+.cap-demo {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr;
+  gap: 16px;
+  align-items: stretch;
+}
+@media (max-width: 900px) { .cap-demo { grid-template-columns: 1fr; } }
+
+.cap-main {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+.cap-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--venus);
+}
+.cap-main h4 {
+  font-family: var(--font-display);
+  font-weight: 650;
+  font-size: 19px;
+  letter-spacing: -0.01em;
+  margin: 8px 0 6px;
+}
+.cap-task {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0 0 14px;
+}
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.step {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfdff;
+  padding: 6px 11px;
+  font-size: 12px;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.step .step-no {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--venus);
+  margin-right: 6px;
+}
+
+.cap-side {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+}
+.cap-side h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 25px;
+  letter-spacing: -0.015em;
+  margin: 10px 0 10px;
+}
+.cap-side > p { font-size: 14.5px; color: var(--muted); margin: 0 0 20px; }
+.cap-side .metric-line {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--venus-deep);
+  margin-bottom: 20px;
+}
+
+.pager {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+}
+.pager button {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--ink);
+  font-size: 15px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.pager button:hover { border-color: var(--venus-bright); color: var(--venus); }
+
+/* Stylized device mockups (placeholders until real demos land) */
+.cap-visual {
+  position: relative;
+  background: linear-gradient(180deg, #f4f9fe, #ecf5fd);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  min-height: 216px;
+  padding: 24px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  overflow: hidden;
+}
+.cap-visual .tbd-corner { position: absolute; top: 10px; right: 10px; }
+
+.sk { background: #dfecf9; border-radius: 4px; }
+.sk.hl { background: rgba(29, 111, 224, 0.28); }
+.sk.soft { background: #ecf4fc; }
+
+.mock-phone {
+  width: 122px;
+  height: 196px;
+  flex: 0 0 auto;
+  background: #fff;
+  border: 2px solid #bcd6f0;
+  border-radius: 15px;
+  padding: 10px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 0 8px 18px -12px rgba(20, 80, 159, 0.35);
+}
+.mock-phone .notch { width: 30px; height: 4px; border-radius: 2px; background: #d5e6f7; align-self: center; margin-bottom: 2px; }
+.mock-arrow { color: #8fb4dd; font-size: 20px; flex: 0 0 auto; }
+.mock-phone.dim { opacity: 0.55; }
+
+.mock-win {
+  width: 100%;
+  max-width: 430px;
+  background: #fff;
+  border: 2px solid #bcd6f0;
+  border-radius: 11px;
+  overflow: hidden;
+  box-shadow: 0 8px 18px -12px rgba(20, 80, 159, 0.35);
+}
+.mock-winbar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 10px;
+  background: #eef5fc;
+  border-bottom: 1px solid #dcebf8;
+}
+.mock-dot { width: 7px; height: 7px; border-radius: 50%; background: #c3d8ee; }
+.mock-url {
+  flex: 1;
+  border-radius: 6px;
+  background: #dfecf9;
+  margin-left: 6px;
+  font-family: var(--font-mono);
+  font-size: 8px;
+  line-height: 1.1;
+  color: #6b84a8;
+  padding: 3px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mock-body { position: relative; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+.mock-row { display: flex; gap: 8px; }
+.mock-row > .sk { flex: 1; }
+
+.target-ring {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border: 2.5px solid var(--venus);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(29, 111, 224, 0.18);
+}
+.target-ring::before, .target-ring::after {
+  content: "";
+  position: absolute;
+  background: var(--venus);
+}
+.target-ring::before { left: 50%; top: -7px; width: 2px; height: 5px; transform: translateX(-50%); box-shadow: 0 21px 0 var(--venus); }
+.target-ring::after { top: 50%; left: -7px; height: 2px; width: 5px; transform: translateY(-50%); box-shadow: 21px 0 0 var(--venus); }
+.coord-chip {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--venus-deep);
+  background: var(--ice);
+  border: 1px solid rgba(59, 139, 244, 0.4);
+  border-radius: 6px;
+  padding: 2px 7px;
+}
+
+.mock-captcha {
+  width: 100%;
+  max-width: 300px;
+  background: #fff;
+  border: 2px solid #bcd6f0;
+  border-radius: 11px;
+  padding: 14px;
+  box-shadow: 0 8px 18px -12px rgba(20, 80, 159, 0.35);
+}
+.captcha-img {
+  position: relative;
+  height: 110px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #dbeafc, #c4def6 55%, #dbeafc);
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+.puzzle-hole {
+  position: absolute;
+  top: 34px;
+  right: 52px;
+  width: 34px;
+  height: 34px;
+  border: 2px dashed rgba(20, 80, 159, 0.5);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.55);
+}
+.puzzle-piece {
+  position: absolute;
+  top: 34px;
+  left: 22px;
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  background: var(--venus);
+  opacity: 0.85;
+}
+.slider-track {
+  position: relative;
+  height: 34px;
+  border-radius: 17px;
+  background: #eaf3fc;
+  border: 1px solid #d8e8f7;
+}
+.slider-handle {
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 42px;
+  height: 26px;
+  border-radius: 13px;
+  background: var(--venus);
+  color: #fff;
+  font-size: 13px;
+  display: grid;
+  place-items: center;
+}
+.slider-trail {
+  position: absolute;
+  left: 10px;
+  top: 12px;
+  width: 40%;
+  border-top: 2px dashed rgba(29, 111, 224, 0.45);
+}
+
+.mock-dialog {
+  width: 100%;
+  max-width: 290px;
+  background: #fff;
+  border: 2px solid #bcd6f0;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 8px 18px -12px rgba(20, 80, 159, 0.35);
+}
+.mock-dialog .dlg-head { display: flex; align-items: center; gap: 9px; margin-bottom: 10px; }
+.mock-dialog .dlg-head svg { width: 20px; height: 20px; color: var(--venus); flex: 0 0 auto; }
+.mock-dialog .dlg-title { font-size: 12.5px; font-weight: 650; color: var(--ink); }
+.dlg-btns { display: flex; gap: 8px; margin-top: 12px; }
+.btn-mini {
+  flex: 1;
+  border-radius: 8px;
+  padding: 7px 0;
+  font-size: 11.5px;
+  font-weight: 600;
+  text-align: center;
+}
+.btn-mini.go { background: var(--venus); color: #fff; }
+.btn-mini.stop { background: #f0f5fb; color: #90a4c0; text-decoration: line-through; }
+.action-chip {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--venus-deep);
+  background: var(--ice);
+  border: 1px solid rgba(59, 139, 244, 0.4);
+  border-radius: 6px;
+  padding: 2px 7px;
+  margin-top: 10px;
+}
+
+/* Concrete mock-UI content inside the schematics */
+.m-bar {
+  font-size: 9.5px;
+  font-weight: 650;
+  color: var(--ink);
+  padding-bottom: 1px;
+}
+.m-file {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #f2f8fd;
+  border-radius: 6px;
+  padding: 5px 6px;
+  font-size: 8.5px;
+  color: #3c5170;
+}
+.m-file.hl { background: rgba(29, 111, 224, 0.16); }
+.m-ico { width: 10px; height: 10px; border-radius: 3px; background: #b9d4ef; flex: 0 0 auto; }
+.m-name { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.m-meta { font-family: var(--font-mono); font-size: 7px; color: var(--venus); flex: 0 0 auto; }
+.m-input {
+  border: 1.5px solid var(--venus);
+  border-radius: 7px;
+  padding: 6px 7px;
+  font-size: 9px;
+  color: var(--ink);
+  background: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.m-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 8.5px;
+  color: #3c5170;
+  background: #f2f8fd;
+  border-radius: 6px;
+  padding: 5px 7px;
+}
+.m-switch {
+  position: relative;
+  width: 18px;
+  height: 10px;
+  border-radius: 5px;
+  background: #c9daee;
+  flex: 0 0 auto;
+}
+.m-switch::after {
+  content: "";
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+}
+.m-btn {
+  background: var(--venus);
+  color: #fff;
+  border-radius: 7px;
+  font-size: 9px;
+  font-weight: 600;
+  text-align: center;
+  padding: 5px 0;
+}
+.m-btn.ok {
+  background: rgba(29, 111, 224, 0.12);
+  color: var(--venus-deep);
+  border: 1px solid rgba(29, 111, 224, 0.3);
+}
+.m-link {
+  font-family: var(--font-mono);
+  font-size: 7.5px;
+  color: var(--venus-deep);
+  border: 1px dashed rgba(29, 111, 224, 0.45);
+  border-radius: 6px;
+  padding: 5px 6px;
+  background: var(--ice);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.m-chips { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.m-chip {
+  font-size: 8.5px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px 8px;
+  color: #52678a;
+  background: #fff;
+  white-space: nowrap;
+}
+.m-sort { margin-left: auto; font-size: 8px; color: #8ba1c0; white-space: nowrap; }
+.m-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.m-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 6px;
+}
+.m-card.off { opacity: 0.55; }
+.m-img { height: 34px; border-radius: 5px; background: linear-gradient(135deg, #dbeafc, #c4def6); margin-bottom: 5px; }
+.m-img.deep { background: linear-gradient(135deg, #9fc4ec, #5b96e0); }
+.m-pname { font-size: 8px; font-weight: 600; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.m-price { font-family: var(--font-mono); font-size: 7.5px; color: #52678a; white-space: nowrap; }
+.m-price.strike { text-decoration: line-through; color: #a9bcd4; }
+.m-badge {
+  position: absolute;
+  top: -6px;
+  right: 6px;
+  background: var(--venus);
+  color: #fff;
+  font-size: 6.5px;
+  font-weight: 700;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
+.m-menu { font-size: 8px; color: #6b84a8; }
+.m-tools { display: flex; flex-direction: column; gap: 4px; flex: 0 0 14px; }
+.m-tools span { width: 14px; height: 14px; border-radius: 4px; background: #dfecf9; }
+.m-canvas {
+  flex: 1;
+  height: 92px;
+  border-radius: 6px;
+  background-color: #f4f9fe;
+  background-image:
+    linear-gradient(45deg, #e4eef8 26%, transparent 26% 74%, #e4eef8 74%),
+    linear-gradient(45deg, #e4eef8 26%, transparent 26% 74%, #e4eef8 74%);
+  background-size: 12px 12px;
+  background-position: 0 0, 6px 6px;
+}
+.m-panel {
+  flex: 0 0 76px;
+  background: #f6fafd;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 5px;
+}
+.m-panel.wide { flex: 0 0 150px; }
+.m-panel-t {
+  font-family: var(--font-mono);
+  font-size: 7px;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: #8ba1c0;
+  margin-bottom: 4px;
+}
+.m-layer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 8px;
+  color: #3c5170;
+  padding: 3.5px 5px;
+  border-radius: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.m-layer.hl { background: rgba(29, 111, 224, 0.14); font-weight: 600; }
+.m-layer.target { background: rgba(29, 111, 224, 0.1); }
+.m-eye { position: relative; width: 9px; height: 9px; border: 1.5px solid #8ba1c0; border-radius: 50%; flex: 0 0 auto; }
+.m-eye.on::after { content: ""; position: absolute; inset: 2px; border-radius: 50%; background: #8ba1c0; }
+.m-eye.tgt { border-color: var(--venus); }
+.m-status { font-family: var(--font-mono); font-size: 8px; color: var(--venus-deep); }
+.m-canvas2 { position: relative; flex: 1; height: 100px; border-radius: 6px; background: #eaf3fc; overflow: hidden; }
+.m-shape { position: absolute; }
+.m-shape.a { left: 12px; top: 14px; width: 46px; height: 46px; border-radius: 50%; background: #c4def6; }
+.m-shape.b { right: 18px; bottom: 12px; width: 60px; height: 30px; border-radius: 6px; background: #d5e6f7; }
+
+.m-cap-t { font-size: 9px; font-weight: 650; color: var(--ink); margin-bottom: 8px; }
+.m-hill { position: absolute; bottom: 0; }
+.m-hill.a { left: 0; width: 70%; height: 55%; background: rgba(90, 140, 200, 0.35); clip-path: polygon(0 100%, 45% 15%, 100% 100%); }
+.m-hill.b { right: 0; width: 55%; height: 42%; background: rgba(90, 140, 200, 0.25); clip-path: polygon(0 100%, 55% 25%, 100% 100%); }
+.slider-hint {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 8.5px;
+  color: #9db4d0;
+  pointer-events: none;
+}
+.m-cap-ok { margin-top: 8px; font-size: 8.5px; font-weight: 650; color: var(--venus-deep); text-align: center; }
+
+.m-txt { font-size: 8.5px; color: #52678a; margin-bottom: 3px; }
+.m-txt b { color: var(--ink); }
+.m-txt.dim2 { color: #8ba1c0; }
+
+/* --------------------------------------------------------------------------
+   Capability schematics — looping 6s animations that sketch what each
+   capability does. Reset automatically when a panel is shown (display:none
+   restarts CSS animations); fully disabled under prefers-reduced-motion.
+   -------------------------------------------------------------------------- */
+
+/* 01 · Mobile: tap the file → type the new name → third screen wakes up */
+#cap-mobile .anim-tap {
+  position: relative;
+  animation: rowTap 6s infinite;
+}
+#cap-mobile .anim-tap::after {
+  content: "";
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  margin-top: -5px;
+  border-radius: 50%;
+  background: rgba(29, 111, 224, 0.55);
+  transform: scale(0);
+  animation: tapRipple 6s infinite;
+}
+@keyframes rowTap {
+  0%, 8%, 26%, 100% { background: rgba(29, 111, 224, 0.16); }
+  12%, 20% { background: rgba(29, 111, 224, 0.38); }
+}
+@keyframes tapRipple {
+  0%, 6% { transform: scale(0); opacity: 0; }
+  10% { transform: scale(1); opacity: 0.9; }
+  22% { transform: scale(2.6); opacity: 0; }
+  100% { opacity: 0; }
+}
+#cap-mobile .mock-arrow { animation: arrowGlow 6s infinite; }
+#cap-mobile .mock-arrow:last-of-type { animation-delay: 1.8s; }
+@keyframes arrowGlow {
+  0%, 18%, 44%, 100% { color: #8fb4dd; transform: none; }
+  26%, 34% { color: var(--venus); transform: translateX(3px); }
+}
+#cap-mobile .anim-type {
+  display: inline-block;
+  animation: typeText 6s infinite;
+}
+@keyframes typeText {
+  0%, 28% { clip-path: inset(0 100% 0 0); }
+  56%, 100% { clip-path: inset(0 0 0 0); }
+}
+#cap-mobile .anim-toggle { animation: switchBg 6s infinite; }
+#cap-mobile .anim-toggle::after { animation: switchKnob 6s infinite; }
+@keyframes switchBg {
+  0%, 48% { background: #c9daee; }
+  56%, 100% { background: var(--venus); }
+}
+@keyframes switchKnob {
+  0%, 48% { transform: none; }
+  56%, 100% { transform: translateX(8px); }
+}
+#cap-mobile .anim-btn { animation: btnBlink 6s infinite; }
+@keyframes btnBlink {
+  0%, 60%, 72%, 100% { opacity: 1; }
+  66% { opacity: 0.45; }
+}
+#cap-mobile .anim-wake { animation: phoneWake 6s infinite; }
+@keyframes phoneWake {
+  0%, 58% { opacity: 0.55; }
+  74%, 100% { opacity: 1; }
+}
+
+/* 02 · Browser: filters latch on, the matching product gets picked */
+#cap-browser .anim-chip { animation: chipOn 6s infinite; }
+#cap-browser .anim-chip.d2 { animation-delay: 0.7s; }
+#cap-browser .anim-chip.d3 { animation-delay: 1.4s; }
+@keyframes chipOn {
+  0%, 4% { background: #fff; border-color: var(--line); color: #52678a; }
+  10%, 74% { background: rgba(29, 111, 224, 0.12); border-color: var(--venus-bright); color: var(--venus-deep); }
+  84%, 100% { background: #fff; border-color: var(--line); color: #52678a; }
+}
+#cap-browser .anim-pick { animation: pickPulse 6s infinite; }
+@keyframes pickPulse {
+  0%, 42% { box-shadow: none; }
+  52%, 84% { box-shadow: 0 0 0 2.5px rgba(29, 111, 224, 0.55); }
+  94%, 100% { box-shadow: none; }
+}
+
+/* 03 · Computer: a sprite grows on the canvas, layers and status respond */
+#cap-computer .m-canvas { position: relative; }
+#cap-computer .m-canvas::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 36px;
+  height: 36px;
+  margin: -18px 0 0 -18px;
+  border-radius: 5px;
+  background:
+    conic-gradient(from 0deg at 50% 50%,
+      var(--venus) 0 25%, var(--venus-bright) 0 50%,
+      var(--venus) 0 75%, var(--venus-bright) 0 100%);
+  opacity: 0.8;
+  transform: scale(0);
+  animation: pixelGrow 6s infinite;
+}
+@keyframes pixelGrow {
+  0%, 24% { transform: scale(0) rotate(0deg); }
+  40%, 86% { transform: scale(1) rotate(90deg); }
+  96%, 100% { transform: scale(0) rotate(90deg); }
+}
+#cap-computer .anim-blink { animation: panelBlink 6s infinite; }
+@keyframes panelBlink {
+  0%, 8%, 22%, 100% { opacity: 1; }
+  14% { opacity: 0.45; }
+}
+#cap-computer .anim-status { animation: statusIn 6s infinite; }
+@keyframes statusIn {
+  0%, 52% { opacity: 0; }
+  64%, 100% { opacity: 1; }
+}
+
+/* 04 · Grounding: the reticle flies in, locks on, coordinates pop */
+#cap-grounding .target-ring { animation: ringLock 6s infinite; }
+@keyframes ringLock {
+  0% { transform: translate(-110px, 26px) scale(1.4); opacity: 0; }
+  8% { transform: translate(-110px, 26px) scale(1.4); opacity: 1; }
+  34% { transform: translate(0, 0) scale(1); }
+  48% { box-shadow: 0 0 0 4px rgba(29, 111, 224, 0.18); }
+  56% { box-shadow: 0 0 0 11px rgba(29, 111, 224, 0); }
+  64%, 94% { transform: none; box-shadow: 0 0 0 4px rgba(29, 111, 224, 0.18); opacity: 1; }
+  100% { transform: none; opacity: 0; }
+}
+#cap-grounding .coord-chip { animation: chipPop 6s infinite; }
+@keyframes chipPop {
+  0%, 44% { opacity: 0; transform: translateY(5px); }
+  52%, 92% { opacity: 1; transform: none; }
+  98%, 100% { opacity: 0; }
+}
+
+/* 05 · CAPTCHA: the piece slides into the gap as the handle drags */
+#cap-captcha .slider-handle { animation: slideGo 6s infinite; }
+@keyframes slideGo {
+  0%, 14% { left: 3px; }
+  48%, 88% { left: calc(100% - 45px); }
+  97%, 100% { left: 3px; }
+}
+#cap-captcha .puzzle-piece { animation: pieceGo 6s infinite; }
+@keyframes pieceGo {
+  0%, 14% { left: 22px; }
+  48%, 88% { left: calc(100% - 86px); }
+  97%, 100% { left: 22px; }
+}
+#cap-captcha .puzzle-hole { animation: holeOk 6s infinite; }
+@keyframes holeOk {
+  0%, 46% { border-style: dashed; border-color: rgba(20, 80, 159, 0.5); background: rgba(255, 255, 255, 0.55); }
+  54%, 88% { border-style: solid; border-color: var(--venus); background: rgba(29, 111, 224, 0.15); }
+  97%, 100% { border-style: dashed; border-color: rgba(20, 80, 159, 0.5); }
+}
+#cap-captcha .slider-trail { animation: trailGrow 6s infinite; }
+@keyframes trailGrow {
+  0%, 14% { width: 0; opacity: 0; }
+  20% { opacity: 1; }
+  48%, 88% { width: 58%; opacity: 1; }
+  97%, 100% { width: 0; opacity: 0; }
+}
+#cap-captcha .slider-hint { animation: hintFade 6s infinite; }
+@keyframes hintFade {
+  0%, 12% { opacity: 1; }
+  24%, 90% { opacity: 0.15; }
+  100% { opacity: 1; }
+}
+#cap-captcha .anim-capok { animation: capOk 6s infinite; }
+@keyframes capOk {
+  0%, 50% { opacity: 0; transform: translateY(3px); }
+  60%, 92% { opacity: 1; transform: none; }
+  98%, 100% { opacity: 0; }
+}
+
+/* 06 · Safety: dialog pops, the safe choice pulses, CallUser types out */
+#cap-safety .mock-dialog { animation: dlgPop 6s infinite; }
+@keyframes dlgPop {
+  0% { opacity: 0; transform: scale(0.93) translateY(8px); }
+  10%, 94% { opacity: 1; transform: none; }
+  100% { opacity: 0; transform: scale(0.97); }
+}
+#cap-safety .btn-mini.go { animation: goPulse 6s infinite; }
+@keyframes goPulse {
+  0%, 24%, 60%, 100% { box-shadow: none; }
+  34% { box-shadow: 0 0 0 6px rgba(29, 111, 224, 0.25); }
+  46% { box-shadow: 0 0 0 2px rgba(29, 111, 224, 0.1); }
+}
+#cap-safety .action-chip { animation: chipReveal 6s infinite; }
+@keyframes chipReveal {
+  0%, 40% { clip-path: inset(0 100% 0 0); }
+  72%, 100% { clip-path: inset(0 0 0 0); }
+}
+
